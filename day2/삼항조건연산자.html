@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼항조건연산자</title>
+</head>
+<body>
+    
+    <script>
+        //조건식 ? 맞으면 이게 출력됨(true) : 틀리면 이게 출력됨 (false)
+
+        let a = 1;
+        let b = 2;
+
+        let result = a < b ? "고양이" : "강아지";
+        console.log(result);
+
+        // 적정체중 계산법 : 적정체중 = (신장 - 100) * 0.9
+        let userHeight = 155;
+        let userweight = 74;
+
+        let nomalWeight = (userHeight - 100) * 0.9;
+        console.log(nomalWeight);
+
+
+        let name = prompt("당신의 이름을 입력해주세요");
+        let height = prompt("당신의 키는 몇 cm 입니까?","숫자만 입력해주세요");
+        let weight = prompt("당신의 몸무게는 몇 kg 입니까?","숫자만 입력해주세요");
+        console.log(name);
+        console.log(height);
+        console.log(weight);
+
+        nomalWeight = (height - 100) * 0.9;
+    </script>
+</body>
+</html>

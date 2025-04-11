@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비교연산자</title>
+</head>
+<body>
+    <script>
+        // a > b : a가 b보다 크다
+        // a < b : a가 b보다 작다.
+        // a >= b : a가 b보다 크거나 같다.
+        // a <= b : a가 b보다 작거나 같다.
+        // a == b : a와 b는 같다 (자료형이 숫자형이던 문자형이든 상관하지 않고 표기된 숫자만 같다면 true를 반환한다. 즉 숫자 10과 '10' 이 같은것으로 인식되어 true 를 반환)
+        // a != b : a와 b는 다르다. (자료형이 문자형이든 숫자형이든 상관하지 않고 숫자 10과 문자 10이 같은것으로 인식되어 a!=b 에 대해 false를 도출)
+        // a === b : a와 b는 같다 (==은 자료형을 검사하지 않지만 ==-=은 자료형까지 일치해야 true를 반환한다.)
+        // a !== b : a와 b는 다르다.(숫자 10과 문자'10' 을 비교할 때 숫자는 같지만 자료형인 타입이 다르기 때문에 a!=b 와 달리 true를 반환함)
+
+        let a = 10;
+        let b = 20;
+        let c = '10';
+        let result;
+
+        result = a > b;
+        console.log(result);
+
+        result = a < b;
+        console.log(result);
+
+        result = a <= b;
+        console.log(result);
+
+        result = a >= b;
+        console.log(result);
+
+        result = a == b;
+        console.log(result);
+
+        result = a != b;
+        console.log(result);
+
+        result = a == c;
+        console.log(result);
+
+        result = a !== c;
+        console.log(result);
+
+        result = a === c;
+        console.log(result); 
+    </script>
+</body>
+</html>
