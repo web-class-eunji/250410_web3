@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버스요금문제</title>
+</head>
+<body>
+    <script>
+        // 1. 나이를 입력받을것
+        // 2. 0 ~ 7 : 유아 버스비는 800원입니다.
+        // 3. 8 ~ 19 : 학생 버스비는 1,200원 입니다.
+        // 4. 20 ~ 34 : 청년 버스비는 1,600원 입니다.
+        // 5. 35 ~ 59 : 중년 버스비는 2,000원 입니다.
+        // 6. 60 ~ 150 : 노년 버스비는 무료입니다.
+        // 7. 조건에 부합하지 않는 나이라면 "무언가 잘못되었다.. 사람의 나이가 어떻게 *** 살?"
+        // 조건추가! : &&연산자 사용하기
+
+        let age = prompt("당신의 나이를 입력하세요");
+        if ( age >= 0 && age <= 7) {
+            document.write("유아 버스비는 800원입니다");
+        }
+        else if (age >= 8 && age <= 19) {
+            document.write("학생 버스비는 1,200원입니다");
+        }
+        else if (age >= 20 && age <= 34) {
+            document.write("청년 버스비는 1,600원입니다");
+        }
+        else if (age >= 35 && age <= 59) {
+            document.write("중년 버스비는 2,000원입니다");
+        }
+        else if (age >= 60 && age <= 150) {
+            document.write("노년 버스비는 무료입니다");
+        }
+        else {
+            document.write("무언가 잘못되었다.. 사람의 나이가 어떻게" + age + "살?");
+        }
+        
+    </script>
+</body>
+</html>

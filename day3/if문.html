@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if문</title>
+</head>
+<body>
+    <script>
+        /*
+        if(조건식){
+            자바스크립트 코드;
+        }
+        조건식은 Boolean 메서드와 마찬가지로 true, false만 반환한다.
+        - 조건식 부분에 0이 들어가면 false 를 반환한다.
+        */
+
+        let num = 10;
+
+        if(num > 500) {
+            document.write("조건이 참입니다.");
+        }
+
+        let zero = 0;
+        if(true){
+            document.write("false입니다.","<br>");
+        }
+
+        // 입력받은 걸음 수를 입력받고 걸음수가 10000보 이상이라면 좋은 습관을 지니고 계시는군요! 출력해보기
+
+        // let walkCount = prompt("당신은 하루 몇 보 걷나요?!");
+
+        // if(walkCount > 10000) {
+        //     document.write("좋은 습관을 지니고 계시는군요! <br>");
+        // }
+        // document.write("==========The End===========");
+
+
+
+
+        /*
+            if(조건식) {
+                조건식의 값이 true 라면 이 코드가 실행됨
+            } else {
+                조건식의 값이 false 라면 이 코드가 실행됨 
+            }
+        */
+
+        // 사용자가 좋아하는 값을 받아서 그 값이 10보다 같거나 크다면 "당신이 좋아하는 숫자는 10 이상이군요" 출력하기 / 사용자가 입력한 숫자가 10보다 작다면 "당신이 좋아하는 숫자는 10 미만이군요" 출력
+
+        // let userNum = prompt("당신이 좋아하는 값을 입력해주세요");
+        
+        // if(userNum >= 10){
+        //     document.write("당신이 좋아하는 숫자는 10 이상이군요!");
+        // } else {
+        //     document.write("당신이 좋아하는 숫자는 10 미만이군요!");
+        // }
+
+        //좋아하는 숫자를 입력받고 if-else문을 사용하여 사용자가 입력한 값이 짝수인지 홀수인지 구분해보기
+
+
+        // let likeNumber = prompt("당신이 좋아하는 숫자를 입력해주세요");
+
+        // if(likeNumber % 2 == 0){
+        //     document.write("당신이 좋아하는 숫자는 짝수입니다.");
+        // }else{
+        //     document.write("당신이 좋아하는 숫자는 홀수입니다.");
+        // }
+
+        
+
+        // 사용자에게 탈퇴할거냐고 물어본 후 확인을 눌렀다면 "탈퇴 처리 되었습니다." 출력 /취소를 눌렀다면 "탈퇴 취소되었습니다."
+
+        let userConfirm = confirm("탈퇴하시겠습니까?");
+        if(userConfirm) {
+            document.write("탈퇴 처리 되었습니다.");
+        } else {
+            document.write("탈퇴 취소 되었습니다.");
+        }
+    </script>
+</body>
+</html>
