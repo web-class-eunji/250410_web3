@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배송비 문제</title>
+</head>
+<body>
+    
+
+    <script>
+        /*
+            구매금액을 입력받는다.
+            사용자가 우리 쇼핑몰의 회원인지 확인받는다
+            만약 사용자의 구매금액이 100000이 넘는다면 사은품이 제공됩니다. 출력
+            만약 사용자의 구매금액이 100000이 넘고, 회원이라면 사은품이 제공됩니다. 와 함께 배송비도 무료라는 문구 추가
+
+            100000이상 구매 고객이지만 회원이 아닐 경우 사은품이 제공됩니다와 함께 비회원은 배송비 5,000원이 부과됩니다 출력
+
+            구매금액이 50000보다 클 때 사용자가 회원이라면 50,000원 이상 구매 회원은 배송비 무료입니다 (사은품은 없음! 10만원 이상만 있는거임)
+
+            사용자가 5만원 이상 구매했는데 회원이 아니라면 배송비 5,000원 발생함을 알리는 문구 출력
+
+            50,000 원 이하로 구매했다면 구매금액이 50,000 미만입니다. 배송비 5,000원 부과됩니다. 
+        */
+
+        let totalPrice = prompt("구매금액 입력","숫자만 입력해주세요");
+        let member = confirm("회원이신가요?");
+
+        if(totalPrice >= 100000){
+            document.write("100,000원 이상 구매로 사은품이 제공됩니다:D <br>");
+            if(member){
+                document.write("회원 50,000이상 구매 고객은 배송비 무료!");
+            }else{
+                document.write("비회원은 배송비 5,000이 부과됩니다.");
+            }
+        } else if(totalPrice >= 50000) {
+            if(member){
+                document.write("회원 50,000이상 구매 고객은 배송비 무료!");
+            }else{
+                document.write("비회원은 배송비 5,000이 부과됩니다.");
+            }
+        } else {
+            document.write("구매 금액이 50,000원 미만입니다. 배송비 5,000이 부과됩니다.");
+        }
+    </script>
+</body>
+</html>

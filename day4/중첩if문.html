@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중첩if문 </title>
+</head>
+<body>
+    
+    <script>
+        /*
+            if(조건식1){
+                자바스크립트 코드;
+                if(조건식2){
+                    자바스크립트 코드;
+                }
+            }
+        */
+
+        let a = 10;
+        let b = 20;
+        let c = 30;
+        if (a < b){
+            document.write("1차 관문 조건이 참입니다. <br>");
+            if (b > c){
+                document.write("2차 관문 조건도 참입니다.");
+            }
+        }
+
+        /*
+            변수에 id와 password 를 지정해놓을것
+            사용자에게 아이디와 비밀번호를 입력받을것
+            만약 설정해놓은 아이디와 입력받은 아이디가 같으면 비밀번호를 검사할 수 있는 기회를 줌! 
+            
+            아이디와 비밀번호가 모두 일치할 경우 id님 반갑습니다! 출력
+
+            비밀번호가 일치하지 않을 경우 비밀번호가 일치하지 않습니다. 출력
+
+            아이디가 일치하지 않을 경우 아이디가 일치하지 않습니다. 출력
+        */
+
+        let id = "ahdmswl112233";
+        let pw = "112233";
+
+        let userId = prompt("아이디를 입력해주세요");
+
+        // if(id == userId){
+        //     if(pw == userPw){
+        //         document.write(userId + "님 반갑습니다~!");
+        //     } else {
+        //         alert("비밀번호가 일치하지 않습니다.");
+        //         // 확인 버튼만 존재하는 경고창
+        //         location.reload();
+        //     }
+        // } else {
+        //     alert("아이디가 일치하지 않습니다");
+        //     location.reload();
+        // }
+
+        if(id !== userId){
+            alert("아이디가 일치하지 않습니다.");
+            location.reload();
+        } else {
+            let userPw= prompt("비밀번호를 입력해주세요");
+
+            if(pw == userPw){
+                document.write(userId + " 님 반갑습니다.");
+            } else {
+                alert("비밀번호가 일치하지 않습니다.");
+                location.reload();
+            }
+        }
+    </script>
+</body>
+</html>
