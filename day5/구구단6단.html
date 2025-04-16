@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단6단</title>
+    <style>
+        .color {
+            color: brown;
+        }
+
+        .even {
+            color: blue;
+        }
+
+        .odd {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- <p class="color"></p> -->
+    <script>
+        let i = 1;
+        while(i <= 60){
+            if(i % 6 == 0){
+                document.write(i,"<br>");
+            }
+            i++;
+        }
+
+        /*
+        20부터 10까지 하나씩 줄어들며 출력하는데 짝수는 파란색 홀수는 빨간색으로 출력할것!
+        css class와 javascript 조건문을 활용
+            - 태그를 작성하면 그대로 출력되는 특징을 이용할것!
+        */
+
+        // document.write("<p class='color'>content</p>");
+
+        let j = 20;
+        while(j >= 10){
+            if(j % 2 == 0) {
+                document.write("<p class='even'>" + j + "</p>");
+            } else {
+                document.write("<p class='odd'>" + j + "</p>");
+            }
+            j--;
+        }
+    </script>
+</body>
+</html>
