@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>continue</title>
+</head>
+<body>
+    
+
+    <script>
+
+        /*
+            for(초기;조건;증감){
+                continue;
+                js코드;
+            }
+
+            let 변수 = 초기값;
+            while(조건){
+                증감
+                continue;
+                js코드;
+            }
+        */
+
+        for(let i = 0; i <= 10; i++){
+            if(i % 2 == 0){
+                continue;
+                // 만약 짝수라면 컨티뉴 뒤에 오는 코드를 무시하고 다시 증감으로 돌아가 연산 실행
+            }
+            document.write(i,"<br>");
+        }
+
+        let j = 0;
+        while(j <= 10){
+            j++;
+            if(j % 2 !== 0){
+                continue;
+            }
+            document.write(j,"<br>");
+        }
+    </script>
+</body>
+</html>

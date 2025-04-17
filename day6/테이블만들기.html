@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블 만들기</title>
+</head>
+<body>
+    <script>
+        let num = 1;
+        let table = "<table border = '1'>";
+
+        for(let i = 0; i <= 5; i++){
+            table += "<tr>";
+            //행을 시작 한줄한줄 만들어지는거임
+            for(let j = 0; j <= 5; j++){
+                table += `<td>${num}</td>`;
+                num++;
+            }
+            table += "</tr>";
+        }
+        table += "</table>";
+        document.write(table);
+
+    </script>
+</body>
+</html>
