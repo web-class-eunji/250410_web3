@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let childrensDay = new Date("2025-05-05");
+        let parentsDay = new Date("2025-05-08");
+        // 알아서 밀리초 단위로 저장이 됨
+        // getTime은 1970년 1월 1일 ~ 2025년 5월 5일까지의 경과된 밀리초 값을 저장함
+        // 우리가 Date메서드를 사용해서 어떤 날짜를 넣어보면 1970-01-01부터 입력한 날짜까지 경과된 밀리초값을 저장한다.
+
+        let minusDay = parentsDay - childrensDay;
+        console.log(minusDay);
+
+        let result = minusDay / (1000 * 60 * 60 * 24);
+        // result = 259,200,000 / 86,400,000
+
+        console.log(`어린이날과 어버이날은 ${result}일 차이가 납니다.`);
+
+        
+    </script>
+</body>
+</html>

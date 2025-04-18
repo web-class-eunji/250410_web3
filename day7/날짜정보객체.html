@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날짜정보객체</title>
+</head>
+<body>
+    
+    <script>
+        //현재 날짜 이론
+        // 참조변수 = new Date();
+        // let todayDate = new Date();
+
+        // ===================================
+
+        // 특정 날짜 이론
+        // 1. 문자열 형식
+        // 참조변수 = new Date("연 / 월 / 일 ");
+        // let string = new Date("2002-5-31");
+
+        // 2. 숫자형식
+        // 참조변수 = new Date(연,월-1,일);
+        // let num = new Date(2002,4,31);
+
+        //=======================================
+        // 날짜 관련 메서드
+        // 날짜를 가져올 때
+        // 1. getFullYear() - 연도정보를 가져옴
+        // 2. getMonth() - 월 정보를 가져옴 (현재월  + 1 )
+        // 3. getDate() - 날짜 정보를 가져옴
+        // 4. getDay() - 요일 정보를 가져옴 ( 일요일 : 0 / 토요일 : 6)
+        // 5. getHours() - 시 정보를 가져옴
+        // 6. getMinutes() - 분정보를 가져옴
+        // 7. getSeconds() - 초 정보를 가져옴  
+        // 8. getTime() - 밀리초 정보를 가져옴
+
+        //날짜 정보를 수정할 때
+        // get -> set 으로  변경하면 됨
+        // 주의사항 : 요일정보 getDay()는 setDay()로 사용할 수 없다 ( 날짜를 바꾸면 자동으로 바뀜 )
+
+        //현재 날짜
+        let today = new Date();
+        let nowMonth = today.getMonth()+1,
+            nowDate = today.getDate(),
+            nowDay = today.getDay();
+        // 하나의 let 키워드로 여러개의 변수를 선언할 때 사용하며 ,로 구분함
+        document.write("<h2>오늘 날짜 정보</h2>");
+        document.write(`현재 월 : ${nowMonth}<br>`);
+        document.write(`현재 일 : ${nowDate}<br>`);
+        document.write(`현재 요일 : ${nowDay}<br>`);
+
+
+        // 월드컵 날짜
+        let worldCup = new Date("2002-05-31");
+        let worldCupMonth = worldCup.getMonth()+1,
+            worldCupDate = worldCup.getDate(),
+            worldCupDay = worldCup.getDay();
+        
+        document.write("<h2>월드컵 날짜 정보</h2>");
+        document.write(`월드컵 몇 월 : ${worldCupMonth}<br>`);
+        document.write(`월드컵 몇 일 : ${worldCupDate}<br>`);
+        document.write(`월드컵 무슨 요일 : ${worldCupDay}<br>`);
+        
+    </script>
+</body>
+</html>
