@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동물맞추기</title>
+    <style>
+        img {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        document.write("<h1>컴퓨터가 생각하는 동물 맞추기</h1>");
+        let animal = prompt("고양이, 강아지, 햄스터 중 택1");
+        let animalNum;
+
+        //switch문 사용할것 / 만약 사용자의 입력이 고양이와 같다면 1 강아지와 같다면 2 햄스터라면 3 / 다른 동물을 입력했다면 잘못된 값 어쩌구 작성 
+
+        switch(animal) {
+            case "고양이": animalNum = 1;
+            break;
+            case "강아지": animalNum = 2;
+            break;
+            case "햄스터": animalNum = 3;
+            break;
+
+            default: alert("잘못된 값을 작성하였습니다.");
+            location.reload();
+        }
+
+        let random = Math.ceil(Math.random()*3);
+        if(animalNum === random) {
+            document.write(`<p>축하합니다! 컴퓨터가 생각하는 동물을 맞췄습니다! </p>`);
+            document.write(`<img src='./animal_img_${animalNum}.jpg'>`);
+        }else {
+            document.write(`<p>아쉽다ㅜ^ㅜ 컴퓨터가 생각한 동물은 바로~!</p>`);
+            document.write(`<img src='./animal_img_${random}.jpg'>`);
+        }
+    </script>
+</body>
+</html>
