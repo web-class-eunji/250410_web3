@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열객체 평균</title>
+</head>
+<body>
+    
+    <script>
+        let students = [// 배열
+            {name: "엘사", score: 85},  // students[0]
+            {name: "모아나", score: 92}, // students[1]
+            {name: "에리얼", score: 78}, // students[2]
+            {name: "라푼젤", score: 63}, // students[3]
+        ];
+        // console.log(students[0].name);
+
+        // 평균 점수를 계산하기 위해서 총합 점수를 저장할 let totalScore를 만들어놓고 for문을 사용해서 학생들의 점수를 반복하며 totalScore에 더한다.
+        // totalScore에는 모든 학생의 점수가 들어있을것이다.
+        // 평균을 내기 위해 학생 수만큼 나눈다 ( 나눈 수가 실수라면 반올림 )
+
+
+        let totalScore = 0;
+        for(let i = 0; i < students.length; i++){
+            totalScore += students[i].score;
+        }
+
+        let avgScore = totalScore / students.length;
+        console.log(avgScore);
+
+        let roundScore = Math.round(avgScore);
+        document.write(`평균 : ${roundScore}`);
+
+    </script>
+</body>
+</html>

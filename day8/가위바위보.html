@@ -13,6 +13,35 @@
         // 생성한 랜덤 숫자가 1과 같다면 ex에 "가위 대입"
         // 생성한 랜덤 숫자가 2와 같다면 ex에 "바위 대입"
         // 생성한 랜덤 숫자가 3과 같다면 ex에 "보 대입"
+
+        // 사용자의 입력값과 랜덤숫자가 같다면 비겼습니다! 컴퓨터도(랜덤값) 을 냈습니다.
+        // 사용자가 이겼다면 "축하합니다 사용자가 이겼습니다~! (컴퓨터 : 랜덤값) 출력"
+        // 사용자가 졌다면 "아쉽네요 컴퓨터가 이겼습니다~! (컴퓨터 : 랜덤값) 출력"
+
+        document.write("<h1>가위바위보 게임 </h1>");
+        let userChoice = prompt("가위, 바위, 보 중 하나를 입력하세요");
+        let randomNum = Math.ceil(Math.random() * 3);
+        let computerChoice;
+
+        if(randomNum === 1){
+            computerChoice = "가위";
+        } else if(randomNum === 2){
+            computerChoice = "바위";
+        } else {
+            computerChoice = "보";
+        }
+
+        if(userChoice === computerChoice){
+            document.write(`비겼다! 컴퓨터도 ${computerChoice}를 냈다람쥐~~`);
+        }else if(
+            (userChoice === "가위" && computerChoice === "보") ||
+            (userChoice === "바위" && computerChoice === "가위") ||
+            (userChoice === "보" && computerChoice === "바위") 
+        ){
+            document.write(`축하포카 사용자가 이겼다람지~~~ 컴퓨터 : ${computerChoice}`);
+        } else {
+            document.write(`아쉽다람지!!!!!!! 컴퓨터가 이겼다람쥐~컴퓨터 : ${computerChoice}`)
+        }
     </script>
 </body>
 </html>
