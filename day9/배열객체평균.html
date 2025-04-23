@@ -30,8 +30,34 @@
         console.log(avgScore);
 
         let roundScore = Math.round(avgScore);
-        document.write(`평균 : ${roundScore}`);
+        document.write(`평균 : ${roundScore} <br>`);
 
+
+        // 최고점수인 학생 찾기
+        // 만약 i번째의 학생의 점수가 앞에있는 학생의 점수보다 높다면 그 높은 점수를 대입할것
+        let highScore = 0;
+        let topStudent;
+
+        for(let i = 0; i < students.length; i++){
+            if(students[i].score > highScore){
+                highScore = students[i].score;
+                topStudent = students[i];
+            }
+        }
+        document.write(`최고점수 학생 : ${topStudent.name}<br>`)
+
+        //평균 이상인 학생만 출력해보기
+        //평균 이상의 학생을 저장할 빈 배열을 생성한 후 새 데이터를 삽입하면서 배열을출력해보기
+        let passedStudents = [];
+
+        for(let i = 0; i < students.length; i++){
+            if(students[i].score >= roundScore){
+                passedStudents.push(students[i]);
+            }
+        }
+        for(let i = 0; i < passedStudents.length; i++){
+            document.write(`${passedStudents[i].name} : ${passedStudents[i].score}<br>`)
+        }
     </script>
 </body>
 </html>

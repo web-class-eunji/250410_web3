@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열객체</title>
+</head>
+<body>
+    <script>
+        /*
+        let 참조변수 = new String(문자형 데이터);
+        let text = new String("Hello string"); 
+
+        let nomalText = "hello String";
+        // 객체는 아니고 타입이 문자형인 변수
+        // 그럼 문자형 객체에 대한 메소드는 사용할 수 없는것인가? 이론적으로? 
+        // 임시로 자바스크립트에서 알아서 객체를 생성함 -> 문자형 객체에 대한 메소드를 사용할 수 있다 -> 만들어진 객체는 메소드를 사용한 후 삭제되며, 결과를 반환한다.
+
+        1. charAt(index) : 문자열에서 입력한 인덱스 번호에 해당하는 문자를 반환
+
+        2. indexOf("찾을 문자"):문자열에서 왼쪽부터 찾을 문자와 일치하는 문자를 찾아서 가장 먼저 일치하는 문자의 인덱스 번호를 반환한다. (만약 찾을 문자가 없다면 -1을 반환한다.)
+
+        3. lastIndexOf("찾을문자") : 문자열에서 오른쪽에서부터 찾을 문자와 일치하는 문자를 찾아서 가장 먼저 일치하는 문자의 인덱스 번호를 반환한다. (오른쪽에서 찾되, 문자의 시작인덱스를 반환한다.)
+
+        4. match("찾을 문자") : 문자열에서 왼쪽부터 찾을 문자와 일치하는 문자를 찾아 가장 먼저 일치하는 문자를 반환 ( 찾는 문자가 없으면 null값을 반환 )
+
+        5. replace("바꿀문자","새 문자") : 문자열에서 왼쪽부터 바꿀 문자와 일치하는 문자를 찾아서 제일 먼저 찾은 문자를 새 문자로 치환한다.
+
+        6. search("찾을 문자") : 문자열에서 왼쪽부터 찾을 문자와 일치하는 문자를 찾아서 가장 먼저 일치하는 문자의 인덱스 번호를 반환한다.
+
+        7. slice(a,b) : a개의 문자를 자르고, b이후에 문자를 자른 후 남는 문자를 반환한다.
+
+        8. substring(a,b) : a인덱스부터, b 인덱스 이전구간의 문자를 반환한다.
+
+        9. substr(a, 문자 개수) : 문자열에 a인덱스부터 지정한 문자 개수만큼 문자열을 반환한다.
+
+        10. split("문자") : 지정한 문자를 기준으로 문자 데이터를 나누어 배열에 저장하여 반환한다.
+
+        11. toLowerCase() : 영문 대문자를 모두 소문자로 변환
+        12. toUpperCase() : 영문 소문자를 모두 대문자로 변환
+
+        13. lenght : 문자열에서 문자의 개수를 반환
+
+        14. concat("새로운 문자") : 문자열에 새로운 문자열을 결합한다.
+        
+        15. charCodeAt(index) : 문자열 인덱스에 해당하는 아스키코드값을 반환한다.
+
+        16. fromCharCode(아스키코드값) : 아스키코드값에 해당하는 문자를 반환해줌
+
+        17 : trim() : 문자의 앞 또는 뒤에 공백 문자열을 삭제한다. 
+    
+        */
+
+        let text = "Hello Thank you good luck to you";
+        let text2 = "hihi";
+
+        document.write(text.charAt(16),"<br>");
+        document.write(text.indexOf("you"),"<br>");
+        document.write(text.indexOf("you",16),"<br>");
+        document.write(text.lastIndexOf("you"),"<br>");
+        document.write(text.lastIndexOf("you"),"<br>");
+        document.write(text.lastIndexOf("you",25),"<br>");
+        document.write(text.match("luck"),"<br>");
+        document.write(text.search("you"),"<br>");
+        document.write(text.substr(21,4),"<br>");
+        document.write(text.substring(6,12),"<br>");
+        document.write(text.replace("you","me"),"<br>");
+        document.write(text.toLowerCase(),"<br>");
+        document.write(text.toUpperCase(),"<br>");
+        document.write(text.length,"<br>");
+        
+        let setText = text.split(" ");
+        console.log(setText);
+        
+        document.write(setText[3],"<br>");
+        document.write(text.charCodeAt(0),"<br>");
+        document.write(String.fromCharCode(97),"<br>");
+        document.write(text.concat(text2),"<br>");
+
+
+    </script>
+</body>
+</html>

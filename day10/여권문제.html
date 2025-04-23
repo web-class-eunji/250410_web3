@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여권문제</title>
+</head>
+<body>
+    <script>
+        // 여권 이름을 받아서 무조건 대문자로 변경해보기
+        let userName = prompt("이름을 영문으로 입력하삼");
+        let upperName = userName.toUpperCase();
+
+        document.write(upperName,"<br>");
+
+        //전화번호를 입력받을건데, 입력받은 번호의 마지막 4자리를 **** 처리할것
+        // 01011112222 -> 0101111****
+        
+        let userNumber = prompt("전화번호를 입력해주세요","01011112222 형식으로 입력하기");
+        let changeNum = userNumber.substring(0,7) + "****";
+        document.write(changeNum);
+    </script>
+</body>
+</html>
