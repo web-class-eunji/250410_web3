@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>브라우저 객체 메서드</title>
+</head>
+<body>
+    <button onclick="clearInterval(auto2)">증가 정지</button>
+    <button onclick="clearInterval(auto3)">감소 정지</button>
+
+    <script>
+        /*
+        1. open("URL","새 창 이름","새 창 옵션") : URL 페이지를 새 창으로 나타냄
+        2. alert(data) : 경고확인창을 나타내고 메시지를 출력함 ( 사용자는 확인을 누를 수 있음 )
+        3. prompt("질문","예시답변"): 질문과 답변으로 질의응답창을 나타냄
+        4. confirm("질문 내용") : 질문 내용으로 확인이나 취소창을 나타낸다. 확인 버튼을 누르면 true 를 반환하고 취소를 누르면 false 를 반환한다. 
+        5. moveTo(x,y) : 지정한 새 창의 위치를 이동시킨다.
+        6. resizeTo(width,height) : 지정한 새 창의 크기를 변경한다. 
+        7. setInterval(function(){자바스크립트코드;}일정시간간격) : 지속적으로 일정한 시간 간격으로 함수를 호출하여 사용한다.
+        8. setTimeout(function(){자바스크립트코드;}일정시간간격) : 단 한 번 일정한 시간 간격으로 함수를 호출하여 코드를 실행한다.
+        */
+
+
+        // window.open("https://www.youtube.com/","유튜브","width=350,height=400,left=500,top=100");
+
+        let popup = window.open("https://www.naver.com/","네이버","width=350,height=400");
+        popup.moveTo(500,500);
+
+        //setInterval
+        let addNum = 0;
+        let subNum = 1000;
+
+        // let auto1 = setInterval(() => {
+        //     if(addNum < subNum){
+        //         addNum++;
+        //         console.log("addNum :" ,addNum);
+        //     }
+        
+        let auto2 = setInterval(() => {
+            addNum++;
+            console.log("addNum :" ,addNum);
+        },1000);
+        let auto3 = setInterval(() => {
+            subNum--;
+            console.log("subNum :" ,subNum);
+        },1000);
+
+
+        let setTimeOutCode = setTimeout(() => {
+            document.write("안녕하세용~");
+        },5000)
+    
+    </script>
+    
+</body>
+</html>

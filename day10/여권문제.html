@@ -17,7 +17,7 @@
         // 01011112222 -> 0101111****
         
         let userNumber = prompt("전화번호를 입력해주세요","01011112222 형식으로 입력하기");
-        let changeNum = userNumber.substring(0,7) + "****";
+        let changeNum = userNumber.substring(0,userNumber.length-4) + "****";
         document.write(changeNum);
     </script>
 </body>

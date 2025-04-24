@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카운트업</title>
+</head>
+<body>
+    
+    <script>
+        //0부터 사용자가 입력한 숫자까지 카운트업
+
+        //숫자를 입력받음 ( 최대숫자입력받기 )
+        // 시작숫자(현재숫자)에 대한 변수를 생성(0이 될거임)
+        // setinterval 즉시실행함수가 들어갈 변수 생성
+        // setinterval함수 안에서 숫자를 출력할것임 ( 현재 숫자는 출력 후 증가할것 )
+        // 증가가 이루어진 후 다시 출력하기 전에 사용자가 입력한 숫자를 넘어가는지 검사
+        // 사용자가 입력한 숫자가 현재 숫자 미만이라면 (증가하고 있던 숫자가 계속 증가해서 유저가 입력한 숫자에 도달했다면)
+        //setinterval을 종료하고 완료! 라는 메시지를 출력
+
+        let num = Number(prompt("숫자를 입력하세요"));
+        let currentNum = 0;
+
+        let countUp = setInterval(() => {
+            document.write(currentNum + "<br>");
+            currentNum++;
+            if(currentNum > num){
+                clearInterval(countUp);
+                document.write("완료!");
+            }
+        },100)
+
+        
+    </script>
+</body>
+</html>
