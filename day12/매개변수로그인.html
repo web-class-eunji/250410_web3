@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매개변수 로그인</title>
+</head>
+<body>
+    <script>
+        /*
+        검사할 id / pw 생성 ( 정답 id / pw임 )
+        login 함수를 생성한 후 매개변수에 id와 pw를 넣는다.
+        만약 정답과 매개변수로 받아온 id / pw 가 일치한다면 로그인됨 -> 패스워드가 달라도
+        매개변수 id와 정답 id가 다르다면 아이디가 일치하지 않다고 출력 
+        변수를 생성해서 사용자가 입력하는 id와 pw를 받아옴
+        login함수의 매개변수로 받아온 정보를 넣어줌
+        로그인함수 호출~~
+        */
+
+        let rightId = "moeunji";
+        let rightPw = 1234;
+
+        function login(id,pw){
+            if(rightId == id){
+                if(rightPw == pw){
+                    document.write("로그인 되었습니다.");
+                } else {
+                    document.write("비밀번호 불일치");
+                }
+            }else {
+                document.write("아이디 불일치");
+            }
+        }
+
+        let idPrompt = prompt("아이디를 입력해주세요"); 
+        let pwPrompt = prompt("비밀번호를 입력해주세요"); 
+
+        login(idPrompt,pwPrompt);
+    </script>
+</body>
+</html>

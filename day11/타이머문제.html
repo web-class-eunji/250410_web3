@@ -19,8 +19,25 @@
         5. 타이머가 들어갈 변수를 만들어서 유저에게 받은 시간이 감소하게 만든 후
         6. 만약 유저에게 받은 시간이 감소할 때 0보다 크다면 남은시간 : *초 출력
         7. 감소하던 시간이 0보다 작아지면 타이머 종료 후 타이머 종료! 출력
-        
         */
+
+        let userTime = Number(prompt("타이머 시간을 입력하세요 (초) : "));
+
+        if(isNaN(userTime) || userTime <= 0) {
+            document.write("올바른 시간을 입력해주세요");
+        }else{
+            document.write(`타이머 시작 ${userTime}초 남음<br>`);
+            let timer = setInterval(()=>{
+                userTime--;
+                if(userTime > 0){
+                    document.write(`남은시간 : ${userTime}초 <br>`);
+                } else {
+                    clearInterval(timer);
+                    document.write("타이머 종료!");
+                }
+            },1000);
+        }
+
     </script>
 </body>
 </html>

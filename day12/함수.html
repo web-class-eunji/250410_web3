@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+</head>
+<body>
+    <script>
+        
+        // 함수란 ? 기능을 저장하는 하나의 공간
+        // 채널 / 음량 / 유튜브 / 외부입력
+
+        /*
+        function 함수명(){
+            자바스크립트 코드;
+        }
+        ==================================
+        참조변수 = function(){
+            자바스크립트 코드;
+        }
+        */
+
+        let count = 0;
+        firstFunction();
+        // 함수선언방식
+        function firstFunction(){
+            count++;
+            document.write(`안녕하세요 ${count}<br>`);
+        }
+        firstFunction();
+
+        //변수에다가 익명의 함수를 할당하는 방식
+        let secondFunction = function(){
+            count++;
+            document.write(`안녕히계세요 ${count}<br>`);
+        }
+        secondFunction();
+        let b = 3;
+
+        // 1번 : script 코드의 어느 부분에서나 호출이 가능하다(함수에서 사용한 변수선언 뒤)
+        // 2번 : 변수만 호이스팅되며, 함수할당부분은 호이스팅되지 않는다. 따라서 선언 이후에만 호출이 가능하다. 
+        // 호이스팅이란 js엔진 실행 전 함수선언부를 스코프 최상단으로 끌어올려 미리 인식
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매개변수</title>
+</head>
+<body>
+    
+    <script>
+        /*
+        funciton 함수명(매개변수1,매개변수2,매개변수3...){
+            자바스크립트 코드
+        } 
+
+        함수명(매개변수1,매개변수2,매개변수3...)
+        */
+
+        //profile(name,area) : parameter = 매개변수
+        // parameter : 인자라고 부르며, 함수 내부에 있는 인자로 특정한 값이 정해져 있는것이 아니라, 함수가 호출되면서 건네준 argument의 값이 변수로서 parameter에 담기게 된다.
+        // argument : 인수라고 부르며, 함수를 호출할 때 parameter에 전달되는 값
+
+        
+        function profile(name,area){
+            //매개변수 : 함수를 호출할 때 입력받을 값
+            document.write(`안녕하세요 저는 ${name}입니다.<br>`);
+            document.write(`${area}에 거주하고 있습니다.<br>`);
+            document.write(`<br>`);
+        }
+
+        profile("강아지","인천");
+        profile("고양이","부산");
+        profile("햄스터","제주도");
+    </script>
+</body>
+</html>
