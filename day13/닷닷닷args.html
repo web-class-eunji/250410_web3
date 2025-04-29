@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>...args</title>
+</head>
+<body>
+    <script>
+        function showArgs(...args){
+            console.log(args);
+        }
+
+        showArgs(1,2,3);
+        showArgs();
+
+
+        function sum(...args){
+            let total = 0;
+            for(let num of args){
+                total += num;
+                // num이라는 변수가 args라는 배열을 순차적으로 돈다 라고 생각하기!
+            }
+            document.write(`합계 : ${total}`);
+        }
+        sum(10,20);
+    </script>
+</body>
+</html>
