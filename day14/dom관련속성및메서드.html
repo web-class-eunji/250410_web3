@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom관련 속성 및 메서드</title>
+</head>
+<body>
+    <div id="only_one_id">하나뿐인 아이디를 가진 요소</div>
+    <div>
+        <p class="class_text">hi1</p>
+        <p class="class_text">hi2</p>
+        <p class="class_text">hi3</p>
+    </div>
+    <script>
+        /*
+            1. getElementById : html 의 id를 사용해서 특정 요소를 가져오는 방법
+                문법 : document.getElementById('아이디');
+                특징 : id 는 유일하기때문에 해당 방법으로 가져오면 항상 하나의 요소를 선택함
+
+            2. getElementByClassName : 클래스 이름으로 요소들을 가져옴
+                문법 : document.getElementByClassName('클래스이름');
+                특징 : 클래스는 여러 요소에 적용 가능하기 때문에 여러 요소들의 htmlcollection을 가져옴
+
+            3. querySelector : css 선택자처럼 작성해서 첫번째 요소를 가져오는 방법 
+                문법 : document.querySeletor('CSS선택자');
+                특징 : css에서 선택할 때 그대로 (. / # 그대로 사용함)
+
+            4. querySelectorAll : css 선택자처럼 작성해서 모든 요소를 가져옴
+                문법 : document.querySeletorAll('CSS선택자');
+                특징 : css 선택자에 해당하는 요소들을 NodeList 형태로 가져옴
+
+            5. getElementByTagName : html의 태그이름으로 요소들을 가져오는 방법
+                문법 : document.getElementByTagName('태그 이름');
+                특징 : 예를들어 <div> 태그를 모두 가져오고 싶다! 
+
+            
+        */
+
+        const onlyOneId = document.getElementById("only_one_id");
+        console.log(onlyOneId);
+
+        const classText = document.getElementsByClassName("class_text");
+        console.log(classText);
+        console.log(classText[0]);
+
+        const queryId = document.querySelector("#only_one_id");
+        console.log(queryId);
+        const queryClass = document.querySelector(".class_text");
+        console.log(queryClass);
+
+        const queryAll = document.querySelectorAll(".class_text");
+        console.log(queryAll);
+
+        queryAll.forEach((element)=>{
+            console.log(element);
+        })
+
+        const allP = document.getElementsByTagName("p");
+        console.log(allP);
+    </script>
+</body>
+</html>

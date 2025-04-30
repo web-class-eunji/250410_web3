@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전역변수지역변수</title>
+</head>
+<body>
+    
+
+    <script>
+        //전역변수 : 함수 밖에 선언됨 프로그램 어디에서나 사용 가능 ( 모든곳에서 사용 가능한 변수 )
+        // 지역변수 : 특정 함수 안에서만 사용할 수 있는 변수 (함수 안에서만 선언되며 함수 밖에서는 접근 불가)
+
+        let text ="전역변수"; // 전역변수
+
+        function testFunction(){
+            let text = "지역변수"; //testFunction 함수 안에서만 사용 가능
+            document.write(text);
+        }
+
+        testFunction();
+        document.write(text);
+
+        // 전역함수 : 프로그램 어디에서나 사용 가능 ( 모든곳에서 사용 가능한 함수 )
+        // 지역함수 : 특정 함수 안에서만 사용할 수 있는 함수 (함수 내부에서 선언된 함수)
+        function globalFunction(){
+            console.log("나는 전역함수로 어디서든 호출할 수 있어!");
+        }
+
+        function globalFunction2(){
+            // 카레만들기기능
+
+            function localFunction(){
+                console.log("재료손질");
+            }
+            //재료손질
+
+            function localFunction2(){
+                console.log("양파 당근 감자 고기 볶기!");
+            }
+            //양파 당근 감자 고기 볶기
+
+            localFunction();
+            localFunction2();
+        }
+
+
+        globalFunction2();
+    </script>
+</body>
+</html>

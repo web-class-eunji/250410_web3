@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 바뀌는 버튼</title>
+    <style>
+        img {
+            width: 500px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery_zone">
+        <figure>
+            <img id="photo" src="./picture_1.jpg" alt="">
+        </figure>
+        <div>
+            <button onclick="gallery(0)">이전</button>
+            <button onclick="gallery(1)">다음</button>
+        </div>
+    </div>
+
+    <script>
+        let num = 1; //현재 보여지는 이미지 번호를 저장하는 변수
+
+        function gallery(direct) {
+            if(direct){ // 매개변수에 들어온 숫자가 양수라면!
+                if(num == 3) {
+                    return;
+                } else {
+                    num++;
+                }
+            }else {
+                if(num == 1){
+                    return;
+                } else {
+                    num--;
+                }
+            }
+
+            let imgTag = document.getElementById("photo");
+            imgTag.setAttribute("src", "./picture_" + num + ".jpg");
+            //setAttribute : dom 요소의 속성값을 설정하는 함수
+        }
+
+    </script>
+</body>
+</html>

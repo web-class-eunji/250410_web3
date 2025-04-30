@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤바 색변경</title>
+    <style>
+        /*
+        ::-webkit-scrollbar 
+        */
+
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        .long_section {
+            height: 5000px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px; 
+            /* width : 오른쪽에 붙어있는 세로스크롤바의 두께 */
+            /* height: ; */
+            /* height : 하단에 붙어있는 가로스크롤바의 두께 */
+        }
+
+        ::-webkit-scrollbar-track {
+            background: paleturquoise; 
+            border-radius: 12px;           
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgb(64, 96, 96);
+            border-radius: 12px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(24, 35, 35);   
+        }
+    </style>
+</head>
+<body>
+    <section class="long_section"></section>
+    
+</body>
+</html>
