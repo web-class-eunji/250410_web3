@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위치관련메서드</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            border: 5px solid black;
+            overflow: auto;
+        }
+
+        #target {
+            width: 200px;
+            height: 100px;
+            background: lightcoral;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- innerWidth와 innerHeight -->
+    <button onclick="showWindowSize()">브라우저 크기보기</button>
+    <p id="size"></p>
+
+    <!-- innerHtml -->
+    <div id="content">
+        <p>이 내용이 바뀔거에요</p>
+    </div>
+    <button onclick="changeContent()">내용 바꾸기</button>
+
+    <!-- textContent -->
+    <div id="text_example">
+        <p>저는 <b>고양이</b>를 좋아해요</p>
+    </div>
+    <button onclick="showText()">텍스트만 보기</button>
+
+    <input type="text" id="name" value="기본값">
+    <button onclick="updateValue()">값 변경하기</button>
+
+    <!-- offsetHeight / clientHeight / scrollHeight -->
+    <div id="box">
+        dkffdfdksflkdsjflaksjdflk
+        알라알라알라알라딘
+        <br>
+        냉면냉면냉면~
+        dkffdfdksflkdsjflaksjdflk
+        알라알라알라알라딘
+        <br>
+        냉면냉면냉면~dkffdfdksflkdsjflaksjdflk
+        알라알라알라알라딘
+        <br>
+        냉면냉면냉면~dkffdfdksflkdsjflaksjdflk
+        알라알라알라알라딘
+        <br>
+        냉면냉면냉면~
+    </div>
+    <button onclick="showHeight()">높이 정보 보기</button>
+    <button onclick="showWidth()">너비 정보 보기</button>
+
+    <div id="target">
+        위치와 크기를 확인할 박스
+    </div>
+    <button onclick="showRect()">타겟 정보보기</button>
+
+    <script>
+        /*
+        1. 브라우저 창 관련 속성
+            - innerHeight / innerWidth : 브라우저 창(window)의 크기를 다루는 속성
+                브라우저의 뷰포트 (스크롤바와 툴바를 제외한 영역) 의 높이와 너비를 나타냄
+        
+        2. HTML 요소 내용 관련 속성
+            - innerHtml : HTMl 내부 요소의 코드를 읽거나 수정 ex ) <div>텍스트</div>
+            div.innerHtml = '<b>hello</b>' -> 태그를 포함한 내용을 변경함 
+
+            - textContent : HTML요소의 텍스트만 읽거나 수정
+                태그를 제외하고 순수 텍스트만 가져옴
+                div.textContent = 'Hello' -> 순수 텍스트만 변경됨
+
+        3. HTMl 요소의 크기와 위치 관련 속성
+            - offsetHeight : 요소의 전체 높이 ( 패딩, 보더 포함)
+            - clientHeight : 요소의 패딩 포함 높이 ( 보더는 제외 )
+            - scrollHeight : 요소의 스크롤 가능한 전체 높이
+            - getBoundingClientRect : 요소의 크기와 브라우저 화면에서의 위치 정보를 반환함
+        */
+
+        function showWindowSize(){
+            const height = window.innerHeight;
+            const width = window.innerWidth;
+            document.getElementById("size").textContent = `높이 : ${height}px / 너비 : ${width}px`
+        }
+
+        function changeContent(){
+            const div = document.getElementById("content");
+            div.innerHTML = "<h1>새로운 내용</h1><p>이제 변경되었어요!</p>";
+        }
+        
+        function showText(){
+            const div = document.getElementById("text_example");
+            alert(div.textContent);
+        }
+
+        function updateValue(){
+            const input = document.getElementById("name");
+            alert(`현재 값 : ${input.value}`);
+            input.value = "새로운 값";
+        }
+
+        function showHeight(){
+            const box = document.getElementById("box");
+            alert(
+                `offsetHeight : ${box.offsetHeight}px \n
+                clientHeight : ${box.clientHeight}px \n
+                scrollHeight : ${box.scrollHeight}px`
+            );
+        }
+        function showWidth(){
+            const box = document.getElementById("box");
+            alert(
+                `offsetWidth : ${box.offsetWidth}px \n
+                clientWidth : ${box.clientWidth}px \n
+                scrollWidth : ${box.scrollWidth}px`
+            );
+        }
+
+        function showRect(){
+            const target = document.getElementById("target");
+            const rect = target.getBoundingClientRect();
+            alert(
+                `위치 : ${rect.x}, ${rect.y}\n
+                위치 : ${rect.right}, ${rect.bottom}\n
+                크기 : ${rect.width}px, ${rect.height}px`
+            )
+        }
+    </script>
+</body>
+</html>

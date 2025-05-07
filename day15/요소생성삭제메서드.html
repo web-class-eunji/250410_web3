@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소생성삭제메서드</title>
+</head>
+<body>
+    <section id="container">
+        <p class="reference">기준이 되는 요소</p>
+        <p class="old_node">교체될 요소</p>
+        <p class="remove_child">삭제할요소</p>
+    </section>
+    <script>
+        /*
+        1. createElement : 새로운 HTMl 요소를 생성
+        2. remove / removeChild : HTMl에서 요소를 삭제할 때 사용
+            element.remove() : 요소 자체를 삭제
+            parent.removeChild(child) : 부모 요소에서 자식 요소를 삭제
+        3. appendChild : 부모요소에 자식요소를 맨 마지막에 추가
+            특징 : 추가할 요소가 이미 다른곳에 있다면 그 요소를 새 위치로 이동시킴
+        4. prepend : 부모요소에 자식요소를 맨 앞에 추가
+        5. insertBefore : 특정 요소 앞에 새 요소를 추가
+            parent.insertBefore(newNode, referenceNode)
+        6. replaceChild : 기존 자식 요소를 새 요소로 교체
+            parent.replaceChild(newNode, oldNode)
+        
+        */
+
+        const section = document.getElementById("container");
+
+        const newDiv = document.createElement('div');
+        newDiv.textContent = "새로운 div 추가";
+        section.appendChild(newDiv);
+
+        //prepend
+        const newDiv2 = document.createElement('div');
+        newDiv2.textContent = "맨 앞에 추가될 요소";
+        section.prepend(newDiv2);
+
+        //insertBefore
+        const newDiv3 = document.createElement('div');
+        newDiv3.textContent = "기준 요소 앞에 추가";
+        const reference = document.getElementsByClassName('reference')[0];
+        section.insertBefore(newDiv3,reference);
+
+        //replaceChild 
+        const newDiv4 = document.createElement('div');
+        newDiv4.textContent = "새로운요소";
+        const oldNode = document.getElementsByClassName("old_node")[0];
+        section.replaceChild(newDiv4,oldNode);
+
+        // //removeChild
+        // const removeChild = document.getElementsByClassName("remove_child")[0];
+        // section.removeChild(removeChild); //부모요소 안에서 요소를 찾아 삭제
+
+        const removeChild = document.getElementsByClassName("remove_child")[0];
+        removeChild.remove();
+
+</script>
+</body>
+</html>
