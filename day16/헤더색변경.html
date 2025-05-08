@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>헤더색변경</title>
+    <style>
+        body {
+            height: 5000px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            height: 80px;
+            width: 100%;
+            position: fixed;
+            background: navy;
+            color: #fff;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        header > ul {
+            display: flex;
+        }
+
+        ul > li {
+            list-style: none;
+            margin: 0 8px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .header_active {
+            background: skyblue;
+        }
+
+        .scroll_color_change {
+            color: navy;
+        }
+
+        button {
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 16px;
+            font-size: 16px;
+        }
+
+        .login_btn,
+        .header > h1 {
+            margin: 0 32px;
+        }
+
+        .header_button_active{
+            color: #fff;
+            background-color: navy;
+        }
+    </style>
+</head>
+<body>
+    
+    <header id="header" class="header">
+        <h1 class="color_change">비비고</h1>
+        <ul id="menu">
+            <li class="color_change">한식</li>
+            <li class="color_change">중식</li>
+            <li class="color_change">일식</li>
+            <li class="color_change">양식</li>
+        </ul>
+        <div class="login_btn">
+            <button>로그인</button>
+            <button>회원가입</button>
+        </div>
+    </header>
+
+    <script>
+        //  헤더 가져오기
+        //  변수를 생성해서 헤더의 높이를 받기
+        //  color_change라는 클래스를 모두! 가져옴
+        //  로그인 버튼과 회원가입 버튼들도 가져옴
+        //  사용자가 스크롤하면 현재 화면이 얼마나 스크롤 되었는지 변수에 담은 후 
+        //  스크롤 된 높이가 헤더의 높이보다 크다면 헤더에다가 클래스를 붙여줄거임
+
+        const header = document.getElementById("header");
+        let headerHeight = header.getBoundingClientRect().height;
+        
+        const headerColorChange = document.querySelectorAll(".color_change");
+        console.log(headerColorChange);
+
+        const buttons = document.querySelectorAll(".login_btn button");
+        console.log(buttons);
+
+        window.addEventListener("scroll",()=>{
+            let scrollHeight = window.scrollY; // 얼만큼 스크롤 했는지 알 수 있음
+            console.log(scrollHeight);
+
+            if(scrollHeight > headerHeight){
+                // 헤더의 높이값보다 더 많이 스크롤 되었다면
+                header.classList.add("header_active");
+                
+                headerColorChange.forEach((love) => {
+                    // nodeList 형태로 받아온 데이터 리스트를 for문으로 돌 수 있는 문법
+                    // 각각의 List에 접근할 수 있는데  love로 접근 가능함
+                    love.classList.add("scroll_color_change");
+                });
+
+                buttons.forEach((element)=>{
+                    element.classList.add("header_button_active");
+                });
+            } else {
+                header.classList.remove("header_active");
+                headerColorChange.forEach((love) => {
+                    // nodeList 형태로 받아온 데이터 리스트를 for문으로 돌 수 있는 문법
+                    // 각각의 List에 접근할 수 있는데  love로 접근 가능함
+                    love.classList.remove("scroll_color_change");
+                });
+
+                buttons.forEach((element)=>{
+                    element.classList.remove("header_button_active");
+                });
+            }
+        })
+    </script>
+</body>
+</html>

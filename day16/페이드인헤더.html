@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페이드인 헤더</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 5000px;
+        }
+
+        header {
+            height: 80px;
+            background: coral;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            transition: 0.5s;
+        }
+
+        header.hide {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+
+        .lorem {
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+    
+    <header></header>
+    <div class="lorem">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet corporis labore est eos corrupti blanditiis, tenetur debitis deleniti, amet expedita mollitia, magni ex eligendi eaque eius necessitatibus aliquid nihil? Nesciunt?
+    </div>
+
+    <script>
+        /* 
+        1. 헤더요소를 가져오기
+        2. 스크롤 위치값을 넣을 변수를 생성하기
+        3. 스크롤 했을 때 스크롤 위치값이 윈도우의 스크롤값보다 작다면 헤더를 숨기는 함수를 실행할거임
+        4. 반대일 땐 헤더를 보여주는 함수를 실행할거임
+        5. 스크롤을 내렸다면 새로운 값이 들어있을거임
+        */
+
+        const header = document.querySelector("header");
+        let posY = 0;
+        // 스크롤의 위치값을 담는 변수가 될거임
+
+        window.addEventListener("scroll",(e)=>{
+            if(posY < window.scrollY){
+                headerHide();
+            } else{
+                headershow();
+            }
+            posY = window.scrollY;
+        });
+
+        function headerHide(){
+            header.classList.add("hide");
+        }
+
+        function headershow(){
+            header.classList.remove("hide");
+        }
+    </script>
+</body>
+</html>
