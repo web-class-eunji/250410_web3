@@ -17,21 +17,35 @@
         // let a = ++b; -> 먼저 ++이 실행되어 b의 값이 증가한 후 증가된 값을 a에 대입한다.
         // let a = b++; -> 먼저 b의 값을 a에 대입한 후 b의 값을 증가시키는 방식 
 
-        let num1 = 10;
-        let num2 = 20;
-        let result;
+        // let num1 = 10;
+        // let num2 = 20;
+        // let result;
 
-        num1--;
-        console.log(num1);
+        // num1--;
+        // console.log(num1);
 
-        num1++;
-        console.log(num1);
+        // num1++;
+        // console.log(num1);
 
-        result = num2++;
-        console.log(result);
+        // result = num2++;
+        // console.log(result);
 
-        result = ++num2;
-        console.log(result);
+        // result = ++num2;
+        // console.log(result);
+
+
+        let price1 = prompt("오늘의 교통비는?");
+        let price2 = prompt("오늘의 식비는?");
+        let price3 = prompt("오늘의 음료비는?");
+
+
+        let total = price1 + price2 + price3;
+
+
+        let result = total >= 10000 ? total - 10000 + "원 초과입니다": "돈 관리 참 잘했어요";
+
+
+        document.write(result);
     </script>    
 </body>
 </html>
