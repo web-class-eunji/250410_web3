@@ -42,27 +42,25 @@
         let id = "ahdmswl112233";
         let pw = "112233";
 
-        let userId = prompt("아이디를 입력해주세요");
-
+        
         // if(id == userId){
-        //     if(pw == userPw){
-        //         document.write(userId + "님 반갑습니다~!");
-        //     } else {
-        //         alert("비밀번호가 일치하지 않습니다.");
-        //         // 확인 버튼만 존재하는 경고창
-        //         location.reload();
-        //     }
-        // } else {
+            //     if(pw == userPw){
+                //         document.write(userId + "님 반갑습니다~!");
+                //     } else {
+                    //         alert("비밀번호가 일치하지 않습니다.");
+                    //         // 확인 버튼만 존재하는 경고창
+                    //         location.reload();
+                    //     }
+                    // } else {
         //     alert("아이디가 일치하지 않습니다");
         //     location.reload();
         // }
-
+        let userId = prompt("아이디를 입력해주세요");
         if(id !== userId){
             alert("아이디가 일치하지 않습니다.");
             location.reload();
         } else {
             let userPw= prompt("비밀번호를 입력해주세요");
-
             if(pw == userPw){
                 document.write(userId + " 님 반갑습니다.");
             } else {

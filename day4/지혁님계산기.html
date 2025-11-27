@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스위치 계산기</title>
+</head>
+<body>
+    <script>
+        // 사용자에게 숫자를 입력받음
+        // 사용자에게 연산자를 입력받음 (+,-,/,*,%)
+        // 사용자에게 두번째 숫자를 입력 받음
+        //====================== 문법시작 ===========================
+        // 사용자가 연산에 +를 입력 했다면 첫번째 숫자와 두번째 숫자를 더해서 출력
+        // 출력형태 -> 결과 : 15
+        // 사용자가 연산에 / 를 입력했다면 두번째 입력받은 숫자가 0인지 확인 후  0이 아닐 때는 연산을 진행해야함 (0을 입력했다면 0으로 나눌 수 없습니다. 출력)
+
+        let num1 = prompt("첫번째 숫자를 입력해주세요.");
+        let rule = prompt("연산자를 입력하세요");
+        let num2 = Number(prompt("두번째 숫자를 입력해주세요"));
+        let result;
+
+        switch(rule){
+            case "-" : result = num1 - num2;
+            break;
+            case "/" : if(num2 == 0){
+                document.write("0으로 나눌 수 없습니다.");
+               
+            }else{
+                result = num1 / num2;
+            }
+            break;
+            case "+" : result = num1 + num2;
+            break;
+            case "*" : result = num1 * num2;
+            break;
+            case "%" : if(num2 == 0){
+                document.write("0으로 나눌 수 없습니다.");
+            }else{
+                result = num1 % num2;
+            }
+            break;
+            default : alert("값을 잘못 입력하셨습니다.");
+        }
+        if(result !== undefined){
+            document.write(result);
+        }
+
+        // console.log(result);
+    </script>
+</body>
+</html>
