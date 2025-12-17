@@ -52,14 +52,21 @@
         const header = document.querySelector("header");
         let posY = 0;
         // 스크롤의 위치값을 담는 변수가 될거임
+        //처음 페이지 로딩 시 스크롤 위치는 항상 0
+        // 스크롤 이벤트가 발생할 때마다 이전 값이 들어 있음
 
         window.addEventListener("scroll",(e)=>{
             if(posY < window.scrollY){
+                // posY : 이전 스크롤 위치가
+                // 윈도우에서 Y로 스크롤 한 값보다 작다면
                 headerHide();
+                // 첫 시작의 posY는 0이니까 0보다 작을 순 없으니 위로 올려도 숨겨지지 않는다.
             } else{
                 headershow();
             }
             posY = window.scrollY;
+            // 만약 스크롤을 해서 스크롤값이 바뀌었다면
+            // posY에 현재 스크롤 위치를 넣어준다.
         });
 
         function headerHide(){
